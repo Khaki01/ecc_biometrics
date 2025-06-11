@@ -1,2 +1,25 @@
-/venv
-.env
+# Python cache and bytecode
+__pycache__/
+*/__pycache__/
+*.py[cod]
+*.so
+
+# Virtual environments
+venv/
+.venv/
+
+# Environment variable files
+# .env
+# .env.*
+
+# VS Code settings
+.vscode/
+
+# macOS system files
+.DS_Store
+
+# Pytest and coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.cache/
