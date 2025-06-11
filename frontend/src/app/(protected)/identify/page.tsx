@@ -32,11 +32,11 @@ export default function IdentifyPage() {
 
   return (
     <div className="max-w-4xl mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-6">Face Identification</h1>
+      <h1 className="text-2xl font-bold mb-6">Бет-әлпетті тану</h1>
 
-      <div className="grid md:grid-cols-2 gap-8">
+      <div className="grid md:grid-cols-2 gap-8 text-gray-600">
         <div className="bg-white rounded-xl shadow-md p-6">
-          <h2 className="text-xl font-semibold mb-4">Upload Image</h2>
+          <h2 className="text-xl font-semibold mb-4">Суретті жүктеу</h2>
 
           <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center">
             {image ? (
@@ -61,7 +61,7 @@ export default function IdentifyPage() {
                   />
                 </svg>
                 <p className="mt-2 text-gray-600">
-                  Drag & drop or click to upload
+                  Сүйреп апарыңыз немесе басып жүктеңіз
                 </p>
               </div>
             )}
@@ -81,14 +81,14 @@ export default function IdentifyPage() {
               htmlFor="file-upload"
               className="inline-block px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 cursor-pointer"
             >
-              Choose File
+              Файлды таңдаңыз
             </label>
           </div>
 
           {loading && (
             <div className="mt-4 text-center">
               <div className="inline-block animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-blue-500"></div>
-              <p className="mt-2 text-gray-600">Identifying face...</p>
+              <p className="mt-2 text-gray-600">Бет-әлпет танылуда…</p>
             </div>
           )}
 
@@ -100,7 +100,7 @@ export default function IdentifyPage() {
         </div>
 
         <div className="bg-white rounded-xl shadow-md p-6">
-          <h2 className="text-xl font-semibold mb-4">Identification Result</h2>
+          <h2 className="text-xl font-semibold mb-4">Танудың нәтижесі</h2>
 
           {result ? (
             <FaceResult result={result} />
@@ -119,7 +119,7 @@ export default function IdentifyPage() {
                   d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
                 />
               </svg>
-              <p className="mt-4">Upload an image to identify faces</p>
+              <p className="mt-4">Бет-әлпетті тану үшін сурет жүктеңіз</p>
             </div>
           )}
         </div>

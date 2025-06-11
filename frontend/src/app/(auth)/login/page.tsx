@@ -82,7 +82,9 @@ export default function LoginPage() {
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center p-4">
       <div className="w-full max-w-md bg-white rounded-xl shadow-md p-6">
-        <h1 className="text-2xl font-bold text-center mb-6">Biometric Login</h1>
+        <h1 className="text-2xl text-gray-600 font-bold text-center mb-6">
+          Биометриялық авторизация
+        </h1>
 
         {error && (
           <div className="mb-4 p-3 bg-red-50 text-red-700 rounded-lg">
@@ -94,7 +96,7 @@ export default function LoginPage() {
           <div className="flex flex-col gap-4">
             <label className="w-full cursor-pointer">
               <span className="block w-full px-4 py-2 text-center bg-gray-700 text-white rounded-md hover:bg-gray-800 transition">
-                Upload from Computer
+                Компьютерден жүктеу
               </span>
               <input
                 type="file"
@@ -107,7 +109,7 @@ export default function LoginPage() {
               className="w-full px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition"
               onClick={() => setMode("camera")}
             >
-              Use Camera
+              Камераны қолдану
             </button>
           </div>
         )}
@@ -131,7 +133,7 @@ export default function LoginPage() {
                     : "bg-gray-500 hover:bg-gray-700 hover:pointer-none:"
                 }`}
               >
-                Authenticate
+                Аутентификациялау
               </button>
 
               {isProcessing && (
@@ -144,7 +146,7 @@ export default function LoginPage() {
                 onClick={() => setMode("initial")}
                 className="w-full px-4 py-2 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300 transition"
               >
-                Back
+                Артқа
               </button>
             </div>
           </>

@@ -13,7 +13,6 @@ export const authenticate = async (imageFile: File | Blob) => {
       },
     });
 
-    console.log("Response:", response.data);
     return response.data;
   } catch (error) {
     if (axios.isAxiosError(error)) {
@@ -38,7 +37,6 @@ export const identify = async (imageFile: File | Blob, token: string) => {
       },
     });
 
-    console.log("Response:", response.data);
     return response.data;
   } catch (error) {
     if (axios.isAxiosError(error)) {

@@ -52,7 +52,7 @@ export default function FaceResult({ result }: { result: FaceResultData }) {
   }, [result]);
 
   return (
-    <div>
+    <div className="text-gray-600">
       <div className="mb-4">
         {result.matched ? (
           <div className="flex items-center text-green-600">
@@ -67,7 +67,7 @@ export default function FaceResult({ result }: { result: FaceResultData }) {
                 clipRule="evenodd"
               />
             </svg>
-            <span className="font-medium">Match Found</span>
+            <span className="font-medium">Сәйкес келді</span>
           </div>
         ) : (
           <div className="flex items-center text-red-600">
@@ -82,15 +82,20 @@ export default function FaceResult({ result }: { result: FaceResultData }) {
                 clipRule="evenodd"
               />
             </svg>
-            <span className="font-medium">No Match Found</span>
+            <span className="font-medium">Сәйкес табылмады</span>
           </div>
         )}
       </div>
 
       {result.matched && (
         <div className="mb-4 p-3 bg-green-50 rounded-lg">
-          <p className="font-medium">Identified as:</p>
-          <p className="text-lg font-semibold">{result.person_id}</p>
+          <p className="font-medium">Нәтижесі:</p>
+          <p className="text-lg font-semibold">
+            {result.person_id
+              ?.split("_")
+              .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+              .join(" ")}
+          </p>
         </div>
       )}
 
@@ -99,8 +104,8 @@ export default function FaceResult({ result }: { result: FaceResultData }) {
       </div>
 
       <div className="mt-4 text-sm text-gray-600">
-        <p>Distance: {result.distance.toFixed(4)}</p>
-        <p>Threshold: {result.threshold.toFixed(4)}</p>
+        <p>Қашықтық: {result.distance.toFixed(4)}</p>
+        <p> Шектік мән: {result.threshold.toFixed(4)}</p>
       </div>
     </div>
   );

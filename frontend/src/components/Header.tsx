@@ -16,7 +16,13 @@ export default function Header() {
       <div className="flex items-center space-x-4">
         {isAuthenticated ? (
           <>
-            <span className="text-sm">Қош келдіңіз, {user?.sub}</span>
+            <span className="text-sm">
+              Қош келдіңіз,{" "}
+              {user?.sub
+                ?.split("_")
+                .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+                .join(" ")}
+            </span>
             <button
               onClick={() => router.push("/identify")}
               className="bg-indigo-500 px-3 py-1 rounded hover:bg-indigo-600 text-sm"
@@ -24,7 +30,10 @@ export default function Header() {
               Анықтау
             </button>
             <button
-              onClick={logout}
+              onClick={() => {
+                logout();
+                router.replace("/");
+              }}
               className="bg-red-500 px-3 py-1 rounded hover:bg-red-600 text-sm"
             >
               Шығу

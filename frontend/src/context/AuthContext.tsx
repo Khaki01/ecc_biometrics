@@ -45,7 +45,6 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
 
   useEffect(() => {
     const token = localStorage.getItem("faceToken");
-    console.log("coinbte", token);
     if (token != undefined && isTokenValid(token)) {
       const user = getTokenPayload(token);
       setAuthState({
